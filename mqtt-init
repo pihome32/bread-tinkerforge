@@ -1,0 +1,6 @@
+{
+"tinkerforge/register/humidity_v2_bricklet/DeD/humidity": {"register": true},
+"tinkerforge/register/humidity_v2_bricklet/DeD/temperature": {"register": true},
+"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period":1000,"option":"X","min":0,"max":0,"value_hase_to_change":false},
+"tinkerforge/request/humidity_v2_bricklet/DeD/set_status_led_config": {"config":0}
+}
