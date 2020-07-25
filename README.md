@@ -54,6 +54,7 @@ sudo apt-get install \
     software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
  ```
+ Modify the service : /lib/systemd/sytem/tinkerforge-mqtt.service
 ## Software
 ### Red-Brick
 #### MQTT server
