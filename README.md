@@ -32,6 +32,10 @@
 
 ### Rapberry
 
+```
+sudo apt-get update
+sudo apt-get upgrade
+ ```
 ## Software
 ### Red-Brick
 #### MQTT server
