@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  mqtt:
+    container_name: mqtt
+    image: eclipse-mosquitto
+    restart: always
+    ports : ['1883:1883']
+    
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+  node-red:
+    container_name: node-red
+    image: nodered/node-red:latest
+    links : 
+      - mqtt:broker
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - 1880:1880
+    volumes:
+      - /home/pi/node-red:/data     
+
+volumes:
+    portainer_data:
