@@ -1,0 +1,1 @@
+[{"id":"3de6569f.32959a","type":"function","z":"f2df911f.26ee18","name":"","func":"msg.payload = '{\"position_x\":5,\"position_y\":5,\"font\":5,\"color\":0,\"orientation\":0,\"text\":\"22\"}';\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":550,"y":360,"wires":[[]]}]
