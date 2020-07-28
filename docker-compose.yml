@@ -3,7 +3,7 @@ services:
   mqtt:
     container_name: mqtt
     image: eclipse-mosquitto
-    restart: always
+    restart: unless-stopped
     ports : ['1883:1883']
     
   portainer:
@@ -19,14 +19,71 @@ services:
   node-red:
     container_name: node-red
     image: nodered/node-red:latest
+    restart: unless-stopped
     links : 
       - mqtt:broker
+      - influxdb:influxdb
+      - mongo:mongodb
+    depends_on:
+       - influxdb
+       - mongo
     environment:
       - TZ=Europe/Amsterdam
     ports:
       - 1880:1880
     volumes:
-      - /home/pi/node-red:/data     
+      - /home/pi/node-red:/data
+  influxdb:
+    container_name: influxdb
+    environment:
+      - INFLUXDB_DB=home
+      - INFLUXDB_ADMIN_USER=breaddb
+      - INFLUXDB_ADMIN_PASSWORD=QWaziKi6MuOt
+    image: hypriot/rpi-influxdb
+    restart: unless-stopped
+    volumes: 
+      - '/home/influxdb:/var/lib/influxdb'
+    ports : 
+       - '8086:8086'
+  mongo:
+    image: 'andresvidal/rpi3-mongodb3'
+    container_name: 'mongodb'
+    restart : unless-stopped
+    volumes: 
+       - /home/pi/mongodb:/data/db
+       - /home/pi/bread-tinkerforge/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+       - '27017-27019:27017-27019'
+    environment:
+       - MONGO_INITDB_DATABASE=bread
+       - MONGO_INITDB_ROOT_USERNAME=breaddb
+       - MONGO_INITDB_ROOT_PASSWORD=QWaziKi6MuOt 
+  chronograf:
+    image: chronograf:latest
+    ports:
+      - '8888:8888'
+    volumes:
+      - chronograf-storage:/var/lib/chronograf
+    depends_on:
+      - influxdb
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_USERNAME=breaddb
+      - INFLUXDB_PASSWORD=QWaziKi6MuOt
+  mongo-express:
+    image: ind3x/rpi-mongo-express
+    restart: always
+    ports:
+      - 8081:8081
 
+    depends_on:
+      - mongo
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME= breaddb
+      - ME_CONFIG_MONGODB_ADMINPASSWORD= QWaziKi6MuOt
+      - ME_CONFIG_BASICAUTH_USERNAME=breaddb
+      - ME_CONFIG_BASICAUTH_PASSWORD=QWaziKi6MuOt
 volumes:
     portainer_data:
+    chronograf-storage:
