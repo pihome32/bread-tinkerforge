@@ -1,9 +1,9 @@
 {
-"tinkerforge/register/humidity_v2_bricklet/DeD/humidity": {"register": true},
-"tinkerforge/register/humidity_v2_bricklet/DeD/temperature": {"register": true},
+"tinkerforge/register/humidity_v2_bricklet/DeD/humidity/room": {"register": true},
+"tinkerforge/register/humidity_v2_bricklet/DeD/temperature/room": {"register": true},
 
-"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period":1000,"option":"x","min":0,"max":0,"value_has_to_change":false},
-"tinkerforge/request/humidity_v2_bricklet/DeD/set_humidity_callback_configuration": {"period":1000,"option":"x","min":0,"max":0,"value_has_to_change":false},
+"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period":5000,"option":"x","min":0,"max":0,"value_has_to_change":false},
+"tinkerforge/request/humidity_v2_bricklet/DeD/set_humidity_callback_configuration": {"period":5000,"option":"x","min":0,"max":0,"value_has_to_change":false},
 
 "tinkerforge/request/humidity_v2_bricklet/DeD/set_status_led_config": {"config":0},
 "tinkerforge/request/master_brick/62fTXQ/disable_status_led":"",
@@ -12,5 +12,10 @@
 "tinkerforge/request/lcd_128x64_bricklet/GKb/set_display_configuration": {"contrast":14,"backlight":0,"invert":false,"automatic_draw":true},
 "tinkerforge/register/motion_detector_v2_bricklet/EyH/motion_detected": {"register": true},
 "tinkerforge/request/motion_detector_v2_bricklet/EyH/set_sensitivity": {"sensitivity": 60},
-"tinkerforge/request/e_paper_296x128_bricklet/LwN/fill_display":{"color": 1}
+"tinkerforge/request/e_paper_296x128_bricklet/LwN/fill_display":{"color": 1},
+
+"tinkerforge/register/air_quality_bricklet/GN6/temperature/chamber": {"register": true},
+"tinkerforge/register/air_quality_bricklet/GN6/humidity/chamber": {"register": true},
+"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_callback_configuration/chamber" : {"period":5000,"option":"x","min":0,"max":0,"value_has_to_change":false},
+"tinkerforge/request/air_quality_bricklet/GN6/set_humidity_callback_configuration/chamber" : {"period":5000,"option":"x","min":0,"max":0,"value_has_to_change":false}
 }

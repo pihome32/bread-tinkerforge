@@ -23,10 +23,8 @@ services:
     links : 
       - mqtt:broker
       - influxdb:influxdb
-      - mongo:mongodb
     depends_on:
        - influxdb
-       - mongo
     environment:
       - TZ=Europe/Amsterdam
     ports:
@@ -45,21 +43,10 @@ services:
       - '/home/influxdb:/var/lib/influxdb'
     ports : 
        - '8086:8086'
-  mongo:
-    image: 'andresvidal/rpi3-mongodb3'
-    container_name: 'mongodb'
-    restart : unless-stopped
-    volumes: 
-       - /home/pi/mongodb:/data/db
-       - /home/pi/bread-tinkerforge/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-    ports:
-       - '27017-27019:27017-27019'
-    environment:
-       - MONGO_INITDB_DATABASE=bread
-       - MONGO_INITDB_ROOT_USERNAME=breaddb
-       - MONGO_INITDB_ROOT_PASSWORD=QWaziKi6MuOt 
+
   chronograf:
     image: chronograf:latest
+    restart : unless-stopped
     ports:
       - '8888:8888'
     volumes:
@@ -70,20 +57,7 @@ services:
       - INFLUXDB_URL=http://influxdb:8086
       - INFLUXDB_USERNAME=breaddb
       - INFLUXDB_PASSWORD=QWaziKi6MuOt
-  mongo-express:
-    image: ind3x/rpi-mongo-express
-    restart: always
-    ports:
-      - 8081:8081
 
-    depends_on:
-      - mongo
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_ADMINUSERNAME= breaddb
-      - ME_CONFIG_MONGODB_ADMINPASSWORD= QWaziKi6MuOt
-      - ME_CONFIG_BASICAUTH_USERNAME=breaddb
-      - ME_CONFIG_BASICAUTH_PASSWORD=QWaziKi6MuOt
 volumes:
     portainer_data:
     chronograf-storage:
