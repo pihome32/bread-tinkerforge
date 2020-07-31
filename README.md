@@ -32,28 +32,25 @@
 
 ### Rapberry
 
-```
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install pythonsudo apt-get install libusb-1.0-0 libudev0 pm-utils
-wget https://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb
-sudo dpkg -i brickd_linux_latest_armhf.deb3-pip
-sudo apt install brickd
-wget https://download.tinkerforge.com/apt/$(lsb_release -is | tr [A-Z] [a-z])/archive.key -q -O - | sudo apt-key add -
-sudo sh -c "echo 'deb https://download.tinkerforge.com/apt/$(lsb_release -is | tr [A-Z] [a-z]) $(lsb_release -cs) main' > /etc/apt/sources.list.d/tinkerforge.list"
-sudo apt update
-sudo apt install mosquitto mosquitto-clients
-sudo systemctl enable mosquitto
-sudo apt install python3-tinkerforge
-sudo apt install tinkerforge-mqtt
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
- ```
+run install.sh
+Enable auto login
+Configure openbox
+/etc/xdg/openbox/autostart
+''
+# Disable any form of screen saver / screen blanking / power management
+xset s off
+xset s noblank
+xset -dpms
+
+# Allow quitting the X server with CTRL-ATL-Backspace
+setxkbmap -option terminate:ctrl_alt_bksp
+
+# Start Chromium in kiosk mode
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
+chromium-browser --disable-infobars --kiosk 'http://your-url-here'
+''
+Create kiosk.service and enable
  Modify the service : /lib/systemd/sytem/tinkerforge-mqtt.service
 ## Software
 ### Red-Brick
