@@ -33,6 +33,8 @@
 ### Rapberry
 
 run install.sh
+reboot
+enable project in nod-red setting.js
 Enable auto login
 add to config.text
 ```
