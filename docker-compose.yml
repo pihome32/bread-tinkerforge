@@ -23,12 +23,14 @@ services:
     links : 
       - mqtt:broker
       - influxdb:influxdb
+    depends_on:
+       - influxdb
     environment:
       - TZ=Europe/Amsterdam
     ports:
       - 1880:1880
     volumes:
-      - nodered-storage:/data
+      - /home/pi/node-red:/data
   influxdb:
     container_name: influxdb
     environment:
@@ -38,7 +40,7 @@ services:
     image: hypriot/rpi-influxdb
     restart: unless-stopped
     volumes: 
-      - influxdb-storage:/var/lib/influxdb
+      - '/home/influxdb:/var/lib/influxdb'
     ports : 
        - '8086:8086'
 
@@ -55,25 +57,44 @@ services:
       - INFLUXDB_URL=http://influxdb:8086
       - INFLUXDB_USERNAME=breaddb
       - INFLUXDB_PASSWORD=QWaziKi6MuOt
-      
+
   telegraf:
     image: telegraf
     container_name: telegraf
     restart: always
-    extra_hosts:
-     - "influxdb:192.168.0.110"
+    links:
+      - influxdb
+      - mqtt
+    depends_on:
+      - influxdb
     environment:
       HOST_PROC: /rootfs/proc
       HOST_SYS: /rootfs/sys
       HOST_ETC: /rootfs/etc
     volumes:
-     - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-     - /var/run/docker.sock:/var/run/docker.sock:ro
-     - /sys:/rootfs/sys:ro
-     - /proc:/rootfs/proc:ro
-     - /etc:/rootfs/etc:ro
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /sys:/rootfs/sys:ro
+      - /proc:/rootfs/proc:ro
+      - /etc:/rootfs/etc:ro
+
+
+  grafana:
+    image: grafana/grafana:latest
+    depends_on:
+      - influxdb
+    links:
+      - influxdb
+    ports:
+      - '3000:3000'
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana-provisioning/:/etc/grafana/provisioning
+
+
+
+
 volumes:
     portainer_data:
     chronograf-storage:
-    influxdb-storage:
-    nodered-storage:
+    grafana-storage:
