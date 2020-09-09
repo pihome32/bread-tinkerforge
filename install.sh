@@ -3,9 +3,13 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt install -y  mosquitto-clients
 sudo apt-get install pythonsudo apt-get install libusb-1.0-0 libudev0 pm-utils
-wget https://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb
-sudo dpkg -i brickd_linux_latest_armhf.deb3-pip
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+sudo apt-get update
+sudo apt-get install -y grafana
+sudo /bin/systemctl enable grafana-server
+sudo /bin/systemctl start grafana-server
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
