@@ -17,21 +17,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
-  node-red:
-    container_name: node-red
-    image: nodered/node-red:latest
-    restart: unless-stopped
-    links : 
-      - mqtt:broker
-      - influxdb:influxdb
-    depends_on:
-       - influxdb
-    environment:
-      - TZ=Europe/Amsterdam
-    ports:
-      - 1880:1880
-    volumes:
-      - /home/pi/node-red:/data
+
   influxdb:
     container_name: influxdb
     environment:

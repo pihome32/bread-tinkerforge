@@ -35,6 +35,11 @@
 run install.sh
 reboot
 Enable auto login
+Enable I2c
+
+In the file /etc/tinkerforge_mqtt.cmdline 
+Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
+sudo systemctl restart tinkerforge_mqtt
 
 
 
