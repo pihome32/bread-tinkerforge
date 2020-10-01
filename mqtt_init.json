@@ -1,0 +1,10 @@
+{
+    "tinkerforge/register/air_quality_bricklet/GN6/temperature/chamber/data/chamberTemp": {"register": true},
+    "tinkerforge/request/air_quality_bricklet/GN6/set_temperature_callback_configuration": {"period": 1000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
+	"tinkerforge/register/air_quality_bricklet/GKX/temperature/chamber/data/roomTemp": {"register": true},
+    "tinkerforge/request/air_quality_bricklet/GKX/set_temperature_callback_configuration": {"period": 1000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
+	"tinkerforge/register/distance_ir_v2_bricklet/HpH/distance/chamber/data/distance": {"register": true},
+    "tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 1000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
+	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp": {"register": true},
+    "tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 1000, "value_has_to_change":false, "min":0,"max":0,"option":"x"}
+}
