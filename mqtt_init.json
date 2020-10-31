@@ -1,4 +1,7 @@
 {
+
+	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_offset": {"offset": 200},
+	"tinkerforge/request/air_quality_bricklet/GKX/set_temperature_offset": {"offset": 200},
     "tinkerforge/register/air_quality_bricklet/GN6/temperature/chamber/data/chamberTemp": {"register": true},
     "tinkerforge/request/air_quality_bricklet/GN6/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
 	"tinkerforge/register/air_quality_bricklet/GKX/temperature/chamber/data/roomTemp": {"register": true},

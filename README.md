@@ -47,41 +47,5 @@ python3 -m pip install raspberry-i2c-tb6612fng
 ´´´
 
 Kiosk mode
-´´´
-sudo nano /etc/xdg/openbox/autostart
-# Disable any form of screen saver / screen blanking / power management
-xset s off
-xset s noblank
-xset -dpms
+https://pimylifeup.com/raspberry-pi-kiosk/
 
-# Allow quitting the X server with CTRL-ATL-Backspace
-setxkbmap -option terminate:ctrl_alt_bksp
-
-# Start Chromium in kiosk mode
-sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
-sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
-chromium-browser --disable-infobars --kiosk 'http://localhost:1880/ui'
-´´´
-
-## Software
-### Red-Brick
-#### MQTT server
- 
-#### Flask for UI interface
-
-#### PID control
-
-#### Main program
-
-### Raspberry
-
-
-#### Node-Red
-
-#### Influx DB
-
-#### Grafana
-
-#### Docker
-
-### Communication RPI to Red-Brick
