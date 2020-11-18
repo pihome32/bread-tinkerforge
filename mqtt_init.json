@@ -8,6 +8,8 @@
     "tinkerforge/request/air_quality_bricklet/GKX/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
 	"tinkerforge/register/distance_ir_v2_bricklet/HpH/distance/chamber/data/distance": {"register": true},
     "tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":false, "min":0,"max":0,"option":"x"},
-	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp": {"register": true},
-    "tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":false, "min":0,"max":0,"option":"x"}
+	"tinkerforge/request/master_brick/62fTXQ/disable_status_led":{},
+	"tinkerforge/request/master_brick/6e7cYn/disable_status_led":{},
+	"tinkerforge/request/air_quality_bricklet/GKX/set_status_led_config":{"config":0},
+	"tinkerforge/request/industrial_dual_relay_bricklet/FLM/set_status_led_config":{"config":0}
 }
