@@ -36,3 +36,5 @@ sudo apt-get autoremove -y
 
 sudo apt install mosquitto mosquitto-clients
 sudo systemctl enable mosquitto
+
+sudo apt-get install xdotool unclutter sed
