@@ -38,3 +38,5 @@ sudo apt install mosquitto mosquitto-clients
 sudo systemctl enable mosquitto
 
 sudo apt-get install xdotool unclutter sed
+
+sudo apt-get install --no-install-recommends chromium-browser
