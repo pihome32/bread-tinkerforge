@@ -64,6 +64,17 @@ chromium
 -browser  --noerrdialogs --disable-infobars --kiosk $KIOSK_URL
 --check-for-update-interval=31536000
 ```
+* sudo nano /etc/xdg/openbox/environment
+```
+export KIOSK_URL=http://localhost:1880/ui
+```
+* touch ~/.bash_profile
+* sudo nano ~/.bash_profile
+```
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- -nocursor
+```
+* source ~/.bash_profile
+* reboot
 
 Kiosk mode
 https://pimylifeup.com/raspberry-pi-kiosk/
