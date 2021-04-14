@@ -32,14 +32,14 @@
 
 ### Rapberry
 
-run install.sh
-reboot
-Enable auto login
-Enable I2c
+* ./install.sh
+* reboot
+* raspi-config
+* Enable auto login and Enable I2c
 
-In the file /etc/tinkerforge_mqtt.cmdline 
-Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
-sudo systemctl restart tinkerforge_mqtt
+* In the file /etc/tinkerforge_mqtt.cmdline 
+*Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
+*sudo systemctl restart tinkerforge_mqtt
 ´´´
 sudo nano /etc/pip.conf
 add index-url=https://pypi.python.org/
