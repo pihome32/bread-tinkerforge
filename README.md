@@ -50,14 +50,20 @@
 #### Display
 
 * sudo nano /etc/xdg/openbox/autostart
-'''console
+```console
 xset -dpms			# turn off display power management system
 xset s noblank		# turn off screen blanking
 # Remove exit errors from the config files that could trigger a warning
   
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
   
-sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences '''
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
+# Run Chromium in kiosk mode
+chromium
+
+-browser  --noerrdialogs --disable-infobars --kiosk $KIOSK_URL
+--check-for-update-interval=31536000
+```
 
 Kiosk mode
 https://pimylifeup.com/raspberry-pi-kiosk/
