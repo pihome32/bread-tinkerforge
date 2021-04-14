@@ -35,6 +35,7 @@
 * ./install.sh
 * reboot
 * raspi-config
+* Disable display overscan
 * Enable auto login and Enable I2c
 * sudo vi /boot/config.txt dtoverlay=disable-bt
 
@@ -48,6 +49,28 @@
 * python3 -m pip install raspberry-i2c-tb6612fng
 
 #### Display
+* sudo touch /etc/systemd/system/dashboard.service
+* sudo nano /etc/systemd/system/dashboard.service
+```
+[Unit]
+Description=Chromium Dashboard
+Requires=graphical.target
+After=graphical.target
+
+[Service]
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Type=simple
+ExecStart=sudo /home/pi/bread-tinkerforge/dashboard.sh
+Restart=on-abort
+User=pi
+Group=pi
+
+[Install]
+WantedBy=graphical.target
+```
+* chmod +x dashboard.sh
+* systemctl enable dashboard.service
 
 * sudo nano /etc/xdg/openbox/autostart
 ```console
