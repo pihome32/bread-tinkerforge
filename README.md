@@ -38,6 +38,7 @@
 * Enable auto login and Enable I2c
 * sudo vi /boot/config.txt dtoverlay=disable-bt
 
+
 * In the file /etc/tinkerforge_mqtt.cmdline 
 * Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
 * sudo systemctl restart tinkerforge_mqtt
