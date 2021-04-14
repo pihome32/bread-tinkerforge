@@ -33,3 +33,6 @@ sudo systemctl disable bluealsa.service
 sudo systemctl disable bluetooth.service
 sudo apt-get purge bluez -y
 sudo apt-get autoremove -y
+
+sudo apt install mosquitto mosquitto-clients
+sudo systemctl enable mosquitto
