@@ -50,7 +50,8 @@
 #### Display
 
 * sudo nano /etc/xdg/openbox/autostart
-''' xset -dpms			# turn off display power management system
+'''console
+xset -dpms			# turn off display power management system
 xset s noblank		# turn off screen blanking
 # Remove exit errors from the config files that could trigger a warning
   
