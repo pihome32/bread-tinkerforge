@@ -36,14 +36,15 @@
 * reboot
 * raspi-config
 * Enable auto login and Enable I2c
+* sudo vi /boot/config.txt dtoverlay=disable-bt
 
 * In the file /etc/tinkerforge_mqtt.cmdline 
-*Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
-*sudo systemctl restart tinkerforge_mqtt
+* Add /home/pi/bread-tinkerforge/mqtt_init.json to the init file
+* sudo systemctl restart tinkerforge_mqtt
 ´´´
-sudo nano /etc/pip.conf
-add index-url=https://pypi.python.org/
-python3 -m pip install raspberry-i2c-tb6612fng
+* sudo nano /etc/pip.conf
+* add index-url=https://pypi.python.org/
+* python3 -m pip install raspberry-i2c-tb6612fng
 ´´´
 
 Kiosk mode
