@@ -11,5 +11,9 @@
 	"tinkerforge/request/master_brick/62fTXQ/disable_status_led":{},
 	"tinkerforge/request/master_brick/6e7cYn/disable_status_led":{},
 	"tinkerforge/request/air_quality_bricklet/GKX/set_status_led_config":{"config":0},
-	"tinkerforge/request/industrial_dual_relay_bricklet/FLM/set_status_led_config":{"config":0}
+	"tinkerforge/request/industrial_dual_relay_bricklet/FLM/set_status_led_config":{"config":0},
+	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_status_led_config":{"config":0},
+	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_wire_mode" : {"mode": 3},
+	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp" : {"register": true},
+	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":false, "min":0,"max":0,"option":"x"}
 }
