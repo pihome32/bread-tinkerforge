@@ -32,9 +32,7 @@ sudo apt-get autoremove -y
 sudo apt install mosquitto mosquitto-clients
 sudo systemctl enable mosquitto
 
-sudo apt-get install xdotool unclutter sed
 
-sudo apt-get install --no-install-recommends chromium-browser
 
 sudo apt-get install libusb-1.0-0 libudev1 procps
 wget --backups=1 https://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb
