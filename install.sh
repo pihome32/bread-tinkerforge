@@ -10,14 +10,12 @@ sudo apt-get update
 sudo apt install brickd
 sudo apt install tinkerforge-mqtt
 
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered --confirm-root --confirm-install --skip-pi)
 sudo systemctl enable nodered.service
 sudo systemctl start nodered.service
 
 
 sudo apt install python3-tinkerforge
-
-
 
 sudo apt-get install -y libffi-dev libssl-dev
 sudo apt-get install -y python3 python3-pip
@@ -31,8 +29,6 @@ sudo apt-get autoremove -y
 
 sudo apt install mosquitto mosquitto-clients
 sudo systemctl enable mosquitto
-
-
 
 sudo apt-get install libusb-1.0-0 libudev1 procps
 wget --backups=1 https://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb
