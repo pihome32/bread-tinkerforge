@@ -1,31 +1,34 @@
 {
 
+	"tinkerforge/register/humidity_v2_bricklet/DeD/temperature/chamber/data/roomTemp": {"register": true},
+	
+	"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	
 	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_offset": {"offset": 200},
-	"tinkerforge/request/air_quality_bricklet/GKX/set_temperature_offset": {"offset": 200},
-        "tinkerforge/register/air_quality_bricklet/GN6/temperature/chamber/data/chamberTemp": {"register": true},
-        "tinkerforge/request/air_quality_bricklet/GN6/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
-	"tinkerforge/register/air_quality_bricklet/GKX/temperature/chamber/data/roomTemp": {"register": true},
-        "tinkerforge/request/air_quality_bricklet/GKX/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	"tinkerforge/register/air_quality_bricklet/GN6/temperature/chamber/data/chamberTemp": {"register": true},
+	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	"tinkerforge/register/distance_ir_v2_bricklet/HpH/distance/chamber/data/distance": {"register": true},
-        "tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	"tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	"tinkerforge/request/master_brick/62fTXQ/disable_status_led":{},
 	"tinkerforge/request/master_brick/6e7cYn/disable_status_led":{},
-	"tinkerforge/request/air_quality_bricklet/GKX/set_status_led_config":{"config":0},
+
 	
 	"tinkerforge/request/industrial_dual_relay_bricklet/FLM/set_status_led_config":{"config":0},
 	"tinkerforge/request/industrial_dual_relay_bricklet/Tfr/set_status_led_config":{"config":0},
 	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_status_led_config":{"config":0},
+	"tinkerforge/request/humidity_v2_bricklet/DeD/set_status_led_config":{"config":0},
 	
-	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_svalue":{"0":false, "1":false},
-	"tinkerforge/request/industrial_dual_relay_bricklet/Tfr/set_svalue":{"0":false, "1":false},
-	"tinkerforge/request/industrial_dual_relay_bricklet/FLM/set_svalue":{"0":false, "1":false},
+	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_value":{"0":false, "1":false},
+	"tinkerforge/request/industrial_dual_relay_bricklet/Tfr/set_value":{"0":false, "1":false},
+
 	
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_status_led_config":{"config":0},
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_wire_mode" : {"mode": 3},
 	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp" : {"register": true},
-	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
+	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
+	"tinkerforge/request/hat_brick/Vtg/set_status_led_config":{"config":2},
 	"tinkerforge/register/hat_brick/Vtg/voltages/chamber/data/hatVoltage" : {"register": true},
-	"tinkerforge/request/hat_brick/Vtg/set_voltage_callback_configuration": {"period": 30000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
+	"tinkerforge/request/hat_brick/Vtg/set_voltages_callback_configuration": {"period": 30000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
 
 }
