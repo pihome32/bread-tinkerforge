@@ -29,7 +29,7 @@
 	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp" : {"register": true},
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
-	"tinkerforge/request/hat_brick/Vtg/set_status_led_config":{"config":2},
+	"tinkerforge/request/hat_brick/Vtg/set_status_led_config":{"config":0},
 	"tinkerforge/register/hat_brick/Vtg/voltages/chamber/data/hatVoltage" : {"register": true},
 	"tinkerforge/request/hat_brick/Vtg/set_voltages_callback_configuration": {"period": 30000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
 
