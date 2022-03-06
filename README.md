@@ -47,5 +47,5 @@
 * sudo nano /etc/pip.conf
 * add index-url=https://pypi.python.org/
 * python3 -m pip install raspberry-i2c-tb6612fng
-
+* enable project in node red settings
 
