@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt install brickd
 sudo apt install tinkerforge-mqtt
 
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered --confirm-root --confirm-install --skip-pi)
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 sudo systemctl enable nodered.service
 sudo systemctl start nodered.service
 
