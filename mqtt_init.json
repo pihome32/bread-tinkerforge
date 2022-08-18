@@ -4,24 +4,25 @@
 	
 	"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
-	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_offset": {"offset": 200},
+	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_offset": {"offset": 80},
 	"tinkerforge/register/air_quality_bricklet/GN6/all_values/chamber/data/chamber_air_quality": {"register": true},
 
 
 	"tinkerforge/request/air_quality_bricklet/GN6/set_all_values_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	
 	"tinkerforge/register/distance_ir_v2_bricklet/HpH/distance/chamber/data/distance": {"register": true},
-	"tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
-	"tinkerforge/request/master_brick/62fTXQ/disable_status_led":{},
+	"tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"off"},
+
 	"tinkerforge/request/master_brick/6e7cYn/disable_status_led":{},
 
-	
+	"tinkerforge/request/e_paper_296x128_bricklet/LwN/set_status_led_config":{"config":0},
 
 	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_status_led_config":{"config":0},
-	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_channel_led_config":{"config":0},
+
 	"tinkerforge/request/humidity_v2_bricklet/DeD/set_status_led_config":{"config":0},
 	
-	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_value":{"0":false, "1":false},
-	"tinkerforge/request/industrial_dual_relay_bricklet/Tfr/set_value":{"0":false, "1":false},
+	"tinkerforge/request/industrial_dual_relay_bricklet/Tfe/set_value":{"channel0":false, "channel1":false},
+	"tinkerforge/request/industrial_dual_relay_bricklet/Tfr/set_value":{"channel0":false, "channel1":false},
 
 	
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_status_led_config":{"config":0},
