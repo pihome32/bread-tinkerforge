@@ -2,18 +2,16 @@
 
 	"tinkerforge/register/humidity_v2_bricklet/DeD/temperature/chamber/data/roomTemp": {"register": true},
 	
-	"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	"tinkerforge/request/humidity_v2_bricklet/DeD/set_temperature_callback_configuration": {"period": 40000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
 	"tinkerforge/request/air_quality_bricklet/GN6/set_temperature_offset": {"offset": 80},
 	"tinkerforge/register/air_quality_bricklet/GN6/all_values/chamber/data/chamber_air_quality": {"register": true},
 
 
-	"tinkerforge/request/air_quality_bricklet/GN6/set_all_values_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	"tinkerforge/request/air_quality_bricklet/GN6/set_all_values_callback_configuration": {"period": 30000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
-	"tinkerforge/register/distance_ir_v2_bricklet/HpH/distance/chamber/data/distance": {"register": true},
-	"tinkerforge/request/distance_ir_v2_bricklet/HpH/set_distance_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"off"},
 
-	"tinkerforge/request/master_brick/6e7cYn/disable_status_led":{},
+
 
 	"tinkerforge/request/e_paper_296x128_bricklet/LwN/set_status_led_config":{"config":0},
 
@@ -28,10 +26,10 @@
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_status_led_config":{"config":0},
 	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_wire_mode" : {"mode": 3},
 	"tinkerforge/register/ptc_v2_bricklet/Gs8/temperature/chamber/data/heaterTemp" : {"register": true},
-	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 3000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
+	"tinkerforge/request/ptc_v2_bricklet/Gs8/set_temperature_callback_configuration": {"period": 20000, "value_has_to_change":true, "min":0,"max":0,"option":"x"},
 	
 	"tinkerforge/request/hat_brick/Vtg/set_status_led_config":{"config":0},
 	"tinkerforge/register/hat_brick/Vtg/voltages/chamber/data/hatVoltage" : {"register": true},
-	"tinkerforge/request/hat_brick/Vtg/set_voltages_callback_configuration": {"period": 30000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
+	"tinkerforge/request/hat_brick/Vtg/set_voltages_callback_configuration": {"period": 1000, "value_has_to_change":true, "min":0,"max":0,"option":"x"}
 
 }
